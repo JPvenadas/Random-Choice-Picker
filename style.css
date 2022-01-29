@@ -1,0 +1,176 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    color:white;
+    background: rgb(46, 45, 45);
+    width: 100w;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    gap: 40px;
+    font-family: helvetica;
+    transition: ease .8s;
+}
+.input-container{
+    width: 500px;
+    height: auto;
+    display: flex;
+    gap: 10px;
+    flex-direction: column;
+   
+    font-family: 'Orbitron', sans-serif;
+}
+.input-container p{
+    font-family: 'Space Mono';
+    display: none;
+}
+textarea{
+    background: rgb(46, 45, 45);
+    color:white;
+    width: 100%;
+    height: 50px;
+    padding: 10px;
+    transition: ease .3s;
+    outline: none;
+}
+
+.choice-container{
+    background: rgb(46, 45, 45);
+    width: 500px;
+    height: 80%;
+    position: relative;
+    transition: ease 1s;
+    display: none;
+    animation-name: fade;
+    animation-duration: .6s;
+    justify-content: space-between;
+    flex-direction: column;
+    border-radius: 10px;
+    
+}
+.choices{
+    height: 90%;
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding: 10px;
+    margin: 15px;
+}
+.choice{
+   display: inline-block;
+   margin: 5px 7px ;
+   color: black;
+   background: white;
+   padding: 5px 8px;
+   font-weight: bold;
+   font-size: 1.4rem;
+   border-radius: 5px;
+}
+
+.choice.highlight{
+    background: rgb(97, 96, 96);
+    color: rgb(255, 251, 251);
+}
+.instruction{
+    font-family: 'Space Mono';
+    color: white;
+    text-align: center;
+    border: 1px solid white;
+    padding: 5px;
+}
+.chosen{
+    position: absolute;
+    top: 0;
+    left:0;
+    height: 100%;
+    width: 0;
+    background: white;
+    z-index: 2;
+    font-family: 'Orbitron';
+    font-size: 3rem;
+    display: flex;
+    font-weight: bolder;
+    justify-content: center;
+    align-items: center;
+    transition: ease 2s;
+    text-align: center;
+}
+@keyframes fade{
+    0% {
+      opacity: 0;
+      transform: translate3d(100%, 0, 0);
+      transform: translate3d(100%, 0, 0);
+      height: 100px;
+    }
+    70%{
+        height: 100px;
+    }
+    100% {
+      opacity: 1;
+      transform: none;
+      transform: none;
+    }
+  }
+  @keyframes fadeoutwhite{
+      0%{ display: block;
+          opacity: 1;
+          box-shadow: inset 0 0px 0px rgb(0, 0, 0);
+      }
+      80%{
+          opacity: 1;
+          box-shadow: inset 0px  100px 0px rgb(0, 0, 0);
+      }
+      100%{
+          opacity: 0;
+          display: none;
+        
+      }
+  }
+
+  @keyframes showresult{
+      0%{
+          width: 0;
+         
+      }
+      30%{
+          width: 100%;
+          height: 100%;
+      }
+      70%{
+          width: 100%;
+          height: 100%;
+         
+      }
+      100%{
+          width: 0;
+        
+      }
+  }
+  @media (max-width: 800px) {
+      body{
+          flex-direction: column;
+          padding: 20px;
+      }
+      .input-container{
+          width: 90%;
+      }
+      .input-container p{
+          font-size: .8rem;
+      }
+      textarea{
+        max-height: 80px;
+      }
+      .instruction{
+          font-size: .7rem;
+      }
+      .choice-container{
+          width: 90%;
+      }
+  }
